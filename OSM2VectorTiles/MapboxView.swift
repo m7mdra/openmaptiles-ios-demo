@@ -37,7 +37,9 @@ struct MapboxView: UIViewRepresentable {
         let jsonStyleData = String(data: try! JSONEncoder().encode(data),encoding: .utf8)!
         uiView.mapboxMap.styleJSON = jsonStyleData
         
-//        uiView.mapboxMap.styleJSON = jsonStyleData
+        // For some reason this dose not work, the style loads but spirte directory is not found by sdk
+//        uiView.mapboxMap.styleURI = StyleURI(url: styleUrl)!
+        
     }
     
     func makeCoordinator() -> MapboxView.Coordinator {
